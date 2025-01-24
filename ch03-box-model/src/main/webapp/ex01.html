@@ -4,6 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>마진과 패딩</title>
 <style>
+* {
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	font-family: "돋움", "맑은 고딕", serif;
 	font-size: 0.8em;
@@ -14,13 +19,65 @@ body {
 	border: 1px solid #666;
 	width: 300px;
 	background-color: #FFC;
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	/* padding: 10px 20px 30px 40px; */
+	/* 
+	Top Right Bottom Left
+	Top (Right, Left) Bottom
+	(Top, Bottom) (Right, Left)
+	 */
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
 }
 </style>
+<script>
+	window.onload = function() {
+		let el = document.getElementById("box1");
+		el.onclick = function() {
+			let marginTop = parseInt(el.style.marginTop);
+
+			const intervalId = setInterval(function() {
+				if (marginTop <= -80) {
+					console.log('finish');
+					clearInterval(intervalId);
+					return;
+				}
+				marginTop = marginTop - 10;
+				el.style.marginTop = marginTop + "px";
+			}, 100);
+		}
+	};
+	/* 비동기적 */
+
+	/*
+	let count = 0;
+	const intervalId = setInterval(function() {
+		if (count >= 10) {
+			clearInterval(intervalId);
+			return;
+		}
+		console.log("!!!");
+		count++;
+	}, 1000); 
+	 */
+	/* 1초마다 실행됨 */
+
+	/*
+	setTimeout(function() {
+		console.log("time out");
+	}, 1000);
+	 */
+	console.log("ok!");
+</script>
 </head>
 
 <body>
-	<div class="box1">
-		CSS에서 가장 보편적이고 많이 사용하는 마진과 패딩에 대한 값이 어떻게 적용되는지 확인해 보겠습니다.
-	</div>
+	<div class="box1" id="box1" style="margin-top: 100px">CSS에서 가장
+		보편적이고 많이 사용하는 마진과 패딩에 대한 값이 어떻게 적용되는지 확인해 보겠습니다.</div>
 </body>
 </html>
