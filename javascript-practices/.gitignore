@@ -1,0 +1,19 @@
+## Mac
+**/.DS_Store
+
+## JavaScript Project
+**/node_modules
+**/public/bundle.js
+**/public/main.js
+**/public/assets
+
+## VS Code IDE
+**/.vscode
+**/.suo
+**/.ntvs*
+**/.njsproj
+**/.sln
+**/.sw?
+
+## Private Resources
+**/**/private-resources
