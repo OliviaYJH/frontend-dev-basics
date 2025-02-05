@@ -5,21 +5,25 @@
 <title>jquery practices</title>
 <script type="text/javascript" src="jquery/jquery-simple.js"></script>
 <script>
-$(function(){
-	var $obj = $(".par");
-	$obj.click(function(){
-		console.log("clicked:" + this);
+	$(function() {
+		console.log($());
+
+		var $obj = $(".par");
+		console.log($obj.length, $obj[0]);
+
+		$obj.click(function() {
+			console.log("clicked:" + this);
+		});
+
+		setTimeout(function() {
+			$obj.css('color', 'red');
+		}, 2000);
+
+		setTimeout(function() {
+			$("p").css('font-weight', 'bold');
+		}, 4000);
+
 	});
-
-	setTimeout(function(){
-		$obj.css('color', 'red');
-	}, 2000);
-
-	setTimeout(function(){
-		$("p").css('font-weight', 'bold');
-	}, 4000);
-
-});
 </script>
 </head>
 <body>
@@ -32,4 +36,3 @@ $(function(){
 	<p>문장4</p>
 </body>
 </html>
- 
