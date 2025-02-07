@@ -5,3 +5,11 @@
     2. 주의: 이름 없이 export 되기 때문에 하나만 export 할 수 있다.
 
  */
+
+// const add = (a, b) => a + b;
+// export default add;
+
+export default (a, b) => a + b;
+
+// error
+// export default (a, b) => a - b; // 하나만 export 가능하다. default는 한 번만 사용해야 한다.
